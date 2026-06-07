@@ -15,10 +15,10 @@ db = mongo_client["RojUserBot"]
 media_collection = db["media_files"]
 
 async def setup_database():
-await media_collection.create_index(
-[("file_unique_id", 1), ("chat_id", 1)],
-unique=True
-)
+    await media_collection.create_index(
+        [("file_unique_id", 1), ("chat_id", 1)],
+        unique=True
+    )
 
 delete_queue = asyncio.Queue()
 
